@@ -1,6 +1,6 @@
 {
   "name": "covid_pt_dashboard",
-  "homepage": "http://ruicalheno133.github.io/covid19pt-data",
+  "homepage": "http://ruicalheno133.github.io/covid-19-dashboard",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
