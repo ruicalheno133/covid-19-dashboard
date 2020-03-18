@@ -1,0 +1,80 @@
+html, body {
+  background-color: whitesmoke;
+}
+
+.App {
+  background-color: whitesmoke;
+  height: 100vh;
+  font-family: "Archivo";
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: whitesmoke;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  font-weight: bold;
+}
+
+.App-footer {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(5px + 1vmin);
+  color: black;
+  margin-top: 3vh;
+}
+
+.App-footer p {
+  margin: 0;
+  padding: 0;
+}
+
+.paper-title {
+  font-size: calc(5px + 3vmin);
+  display: block;
+  text-align: center;
+}
+
+.paper-number {
+  font-size: calc(5px + 3vmin);
+  display: block;
+  align-items: center;
+  text-align: center;
+  color: grey;
+}
+
+.news-title {
+  font-size: 4vh;
+  display: block;
+  text-align: center;
+}
+
+.news-content {
+  margin: 10px;
+}
+
+.news-content a{
+  text-decoration: none;
+  color: grey;
+  font-size: 2vh;
+  margin: 4px;
+}
+
+.novos {
+  font-size: calc(5px + 1vmin);
+  color: red;
+}
