@@ -21,12 +21,12 @@ class BarChart extends React.Component {
 	render() {
         var symptomsData = []
         var colors = ['#4EADDC', '#3DA5D9', '#3896C6', '#3288B2', '#2D799E', '#276A8B']
-        symptomsData.push({y: Math.floor(parseFloat(this.props.data['sintomas_tosse']) * parseInt(this.props.data['confirmados'])), label: 'Tosse'})
-        symptomsData.push({y: Math.floor(parseFloat(this.props.data['sintomas_febre']) * parseInt(this.props.data['confirmados'])), label: 'Febre'})
-        symptomsData.push({y: Math.floor(parseFloat(this.props.data['sintomas_dificuldade_respiratoria']) * parseInt(this.props.data['confirmados'])), label: 'Dificuldade\nRespiratória'})
-        symptomsData.push({y: Math.floor(parseFloat(this.props.data['sintomas_cefaleia']) * parseInt(this.props.data['confirmados'])), label: 'Cefaleia'})
-        symptomsData.push({y: Math.floor(parseFloat(this.props.data['sintomas_dores_musculares']) * parseInt(this.props.data['confirmados'])), label: 'Dores Musculares'})
-        symptomsData.push({y: Math.floor(parseFloat(this.props.data['sintomas_fraqueza_generalizada']) * parseInt(this.props.data['confirmados'])), label: 'Fraqueza Generalizada'})
+        symptomsData.push({y: Math.floor(parseFloat(this.props.data['sintomas_tosse']) * parseInt(this.props.data['confirmados'])), label: 'Cough'})
+        symptomsData.push({y: Math.floor(parseFloat(this.props.data['sintomas_febre']) * parseInt(this.props.data['confirmados'])), label: 'Fever'})
+        symptomsData.push({y: Math.floor(parseFloat(this.props.data['sintomas_dificuldade_respiratoria']) * parseInt(this.props.data['confirmados'])), label: 'Difficulty breathing'})
+        symptomsData.push({y: Math.floor(parseFloat(this.props.data['sintomas_cefaleia']) * parseInt(this.props.data['confirmados'])), label: 'Headache'})
+        symptomsData.push({y: Math.floor(parseFloat(this.props.data['sintomas_dores_musculares']) * parseInt(this.props.data['confirmados'])), label: 'Muscle aches'})
+        symptomsData.push({y: Math.floor(parseFloat(this.props.data['sintomas_fraqueza_generalizada']) * parseInt(this.props.data['confirmados'])), label: 'Tiredness'})
         symptomsData.sort(this.compare)
 
         for (var i = 0; i < symptomsData.length; i++) {
