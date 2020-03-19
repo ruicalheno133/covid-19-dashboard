@@ -1,79 +1,13 @@
-/*import React from "react";
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import * as d3 from 'd3';
-
-var margin = {top: 10, right: 30, bottom: 30, left: 60},
-    width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
-
-class LineChart extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {}
-        this.drawChart()
-    }
-
-    drawChart(){
-        const svg = d3.select('.g')
-        .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform",
-              "translate(" + margin.left + "," + margin.top + ")");
-
-        var x = d3.scaleTime()
-              .domain(d3.extent(this.props.data, function(d) { console.log(d.data);return d.data; }))
-              .range([ 0, width ]);
-        
-        svg.append("g")
-              .attr("transform", "translate(0," + height + ")")
-              .call(d3.axisBottom(x))
-
-        var y = d3.scaleLinear()
-              .domain([0, d3.max(this.props.data, function(d) { return d.confirmados; })])
-              .range([ height, 0 ]);
-        
-            svg.append("g")
-              .call(d3.axisLeft(y));
-
-              svg.append("path")
-              .datum(this.props.data)
-              .attr("fill", "none")
-              .attr("stroke", "white")
-              .attr("stroke-width", 1.5)
-              .attr("d", d3.line()
-                .x(function(d) { return x(d.data) })
-                .y(function(d) { return y(d.confirmados) })
-                )
-    }
-
-    render() {
-
-
-            return  (
-                    <Paper > 
-                        <div className="g" />
-                    </Paper>
-            )
-    }
-}
-
-export default LineChart
-*/
-
 import React from 'react';
+import Paper from '@material-ui/core/Paper';
 import CanvasJSReact from '../assets/canvasjs.react';
+import Button from '@material-ui/core/Button';
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+
  
 class LineChart extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            dataPoints: []
-        }
     }
 
     componentDidUpdate(){
@@ -92,25 +26,32 @@ class LineChart extends React.Component {
             animationEnabled: true,	
             theme: "light2",
             title:{
-                text: "Confirmed cases"
             },
             axisY : {
                 title: "Number of Confirmed cases",
                 includeZero: false
             },
             toolTip: {
-                shared: true
+                shared: true,
             },
             data: [
             {
+                toolTipContent: "{label} </br> <span style='\"'color: #E98A15;'\"'>Confirmed cases</span> {y}",
                 type: "spline",
+                lineColor: "#E98A15",
+                markerColor: "#E98A15",
+                legendeMarkerBorderColor: "#E98A15",
                 name: "Confirmed cases",
                 showInLegend: true,
                 dataPoints: confirmedPoints
             },
             {
+                toolTipContent: "<span style='\"'color: #2AB7CA;'\"'>Suspected cases</span> {y}",
                 type: "spline",
                 name: "Suspected cases",
+                lineColor: "#2AB7CA",
+                markerColor: "#2AB7CA",
+                legendeMarkerBorderColor: "#2AB7CA",
                 showInLegend: true,
                 dataPoints: suspectsPoints
             }]
@@ -118,10 +59,10 @@ class LineChart extends React.Component {
     
     return (
     <div>
-        <CanvasJSChart options = {options} 
-            /* onRef={ref => this.chart = ref} */
-        />
-        {/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+        <Paper>
+            <Button style={{width: "100%" }}>CASE EVOLUTION BY DAY</Button>
+            <CanvasJSChart options = {options} />
+        </Paper>
     </div>
     );
 	}

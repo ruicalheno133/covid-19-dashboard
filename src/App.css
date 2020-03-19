@@ -5,7 +5,7 @@ html, body {
 .App {
   background-color: whitesmoke;
   height: 100vh;
-  font-family: "Archivo";
+  font-family: "Archivo"; 
   margin-left: 5vw;
   margin-right: 5vw;
 }
@@ -54,7 +54,39 @@ html, body {
   display: block;
   align-items: center;
   text-align: center;
-  color: grey;
+
+}
+
+.confirmed .paper-number {
+  color: #FFA737;
+}
+
+.confirmed {
+  border: 2px solid #FFA737;
+}
+
+.recovered .paper-number {
+  color: #0BBC62;
+}
+
+.recovered {
+  border: 2px solid #0BBC62;
+}
+
+.suspected .paper-number {
+  color: #2AB7CA;
+}
+
+.suspected {
+  border: 2px solid #2AB7CA;
+}
+
+.death {
+  border: 2px solid #C42845;
+}
+
+.death .paper-number {
+  color: #C42845;
 }
 
 .news-title {

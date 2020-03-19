@@ -14,7 +14,7 @@ class NumberCard extends React.Component {
         var crescimento = this.props.number / (this.props.number - this.props.novos);
 
             return  (
-                    <Paper className="paper"> 
+                    <Paper className={"paper " + this.props.className} > 
                         <span className="paper-title">
                         {this.props.title}
                         </span>
